@@ -33,7 +33,7 @@ def top_culinarias(df):
                                 country_name=('country_name', 'first')
                             ).sort_values(by=['maior_nota', 'menor_id'] , ascending=[False, True]).reset_index().head(10))
     
-    fig = px.bar(culinaria_nota_media, x='cuisines', y='maior_nota', text='maior_nota', labels={'country_name': 'Países'} )
+    fig = px.bar(culinaria_nota_media, x='cuisines', y='maior_nota', text='maior_nota', color='country_name', labels={'country_name': 'Países'} )
     fig.update_layout(
                       xaxis_title='Culinária',
                       yaxis_title='Média Nota'
@@ -56,7 +56,7 @@ def piores_culinarias(df):
                                 country_name=('country_name', 'first')
                             ).sort_values(by=['menor_nota', 'menor_id'] , ascending=[False, True]).reset_index().head(10))
     
-    fig = px.bar(culinaria_nota_media, x='cuisines', y='menor_nota',  text='menor_nota', labels={'country_name': 'Países'} )
+    fig = px.bar(culinaria_nota_media, x='cuisines', y='menor_nota',  text='menor_nota', color='country_name', labels={'country_name': 'Países'} )
     fig.update_layout(
                       xaxis_title='Culinária',
                       yaxis_title='Média Nota'
